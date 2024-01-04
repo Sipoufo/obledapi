@@ -6,7 +6,7 @@ RUN mvn clean install -DskipTests
 
 # Run spring boot in Docker
 FROM openjdk:17-jdk
-COPY --from=build /opt/app/target/obledapi.jar obledapi.jar
+COPY --from=build /opt/app/target/obledapi-0.0.1-SNAPSHOT.jar obledapi.jar
 ENV PORT 8082
 EXPOSE $PORT
 ENTRYPOINT ["java","-jar","-Xmx1024M","-Dserver.port=${PORT}","obledapi.jar"]
