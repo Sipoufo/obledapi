@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/cart")
 public class CartController {
 
-    @Autowired
+    /*@Autowired
     private FileUploadService fileUploadService;
 
     @GetMapping
@@ -76,5 +76,5 @@ public class CartController {
         } catch (IOException ex) {
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
         }
-    }
+    }*/
 }
