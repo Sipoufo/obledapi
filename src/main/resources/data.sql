@@ -1,0 +1,2 @@
+INSERT INTO users(email, first_name, last_name, password, phone, is_block)
+	VALUES ('admin@obled.com', 'Admin', 'admin', '$2a$10$YZFklL6/aTg52p46V6EOHuPbwe.w6JHoix8xbrUiLJTniSP3E6zyy', '690926957', false);

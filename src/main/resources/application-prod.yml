@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/obled
+    username: postgres
+    password: postgres
+  sql:
+    init:
+      mode: always
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+ticket:
+  app:
+    jwtSecret: Obled@2023:)
+    jwtExpirationMs: 86400000

@@ -1,0 +1,21 @@
+node {
+    def WORKSPACE = "/var/lib/jenkins/workspace/obledapi"
+    def dockerImageTag = "obledapi-deploy${env.BUILD_NUMBER}"
+    try{
+        stage('Clone Repo') {
+            git url: 'https://github.com/Sipoufo/obledapi_api.git',
+                credentialsId: 'github_myticket',
+                branch: 'main'
+         }
+        stage('Build docker') {
+             dockerImage = docker.build("obledapi-deploy:${env.BUILD_NUMBER}")
+        }
+        stage('Deploy docker'){
+              echo "Docker Image Tag Name: ${dockerImageTag}"
+              sh "docker stop obledapi-deploy || true && docker rm obledapi-deploy || true"
+              sh "docker run --net=host --name obledapi-deploy -d -p 8080:8080 obledapi-deploy:${env.BUILD_NUMBER}"
+        }
+    }catch(e){
+        throw e
+    }
+}

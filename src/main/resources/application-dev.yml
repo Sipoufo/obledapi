@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/obled
+    username: postgres
+    password: postgres
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+  jpa:
+    defer-datasource-initialization: true
+    show-sql: true # ??
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 300MB
+      file-size-threshold: 2KB
+      max-request-size: 300MB
+
+ticket:
+  app:
+    jwtSecret: Obled@2023:)
+    jwtExpirationMs: 86400000
