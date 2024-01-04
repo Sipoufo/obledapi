@@ -7,8 +7,6 @@ import com.example.obledapi.payloads.responses.FileUploadResponse;
 import com.example.obledapi.payloads.responses.MessageResponse;
 import com.example.obledapi.services.cartService.CartService;
 import com.example.obledapi.services.cartService.CartServiceImpl;
-import com.example.obledapi.services.fileUploadService.FileUploadService;
-import com.example.obledapi.services.fileUploadService.FileUploadServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
